@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.card_home{
+   height: 60vh;
+   border-radius: 35px;
+   margin-bottom: 25px;
+   background-color: #f2f2f2;
+}
+
+.left_align{
+    /* flex: 50%; */
+    align-items: center;
+}
+
+/* .right_align{
+    flex: 50%;
+    align-items: right;
+} */
+
+.card-header{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;  
+    height: 60px;     
+    background-color: #3b6974;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    font-size: 30px;
+    color: white;
+    margin: 28px 10px 0px 22px;
+}
+
+.battle_title_content{
+    display: flex;
+    overflow-x: auto;
+    flex-direction: row;
+    margin: 28px 12px 0px 22px;
+    /* position: sticky; */
+}
+
+.battle_title_info{
+    border-right: 1px solid;
+    position: sticky;
+    padding: 2rem;
+    height: 300px;
+    width: 200px;
+    background-color: #082032;
+    color: #ffcc00;
+    margin-right: 25px;
+    border-radius: 10px;
+}
+
+.battle_title_targets{
+    white-space: nowrap;   
+}
+
+.battle_title_target{
+    position: relative;
+    display: flex;
+    height: 300px;
+    width: 400px;    
+}
+
+.innercard{    
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+
+/* .body{
+    display: flex;
+    column-gap: 25px;   
+}
+
+.hello{
+    width: 189px;
+    height: 219px;
+              
+}
+
+.image{
+    width: 245px;
+    height: 219px;   
+}
+
+.bgcolor{
+    background-color: #082032;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    color: #ffcc00;
+    text-align: left;
+}
+
+image1{
+    width: 400px;
+    height: 300px;
+}
+ */
+
+
