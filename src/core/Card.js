@@ -15,12 +15,12 @@ import {
   deleteFriendlyBattle,
 } from "./helper/CardHelper";
 import Spinner from "./layout/Spinner";
-import Countdown from "react-countdown";
 import { Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { isAuthenticated } from "../auth/helper";
+import Countdown from "react-countdown";
 
 const Card = (props) => {
   const { language_name, language_description, language_logo } = props;
@@ -197,7 +197,7 @@ const Card = (props) => {
           console.log(error);
         }
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const deletFriendlyConnection = () => {
@@ -220,73 +220,62 @@ const Card = (props) => {
 
   return (
     <>
-      <div className="card custom_card">
-        <div className="row g-0">
-          <div className="col-md-4 my-2 card_image">
-            <img
-              src={language_logo}
-              className="img-fluid rounded-start card-img-top"
-              alt="..."
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title">
-                {language_name}{" "}
-                {language_name === "JavaScript" && <small>(Coming Soon)</small>}
-              </h5>
-              <p className="card-text">{language_description}</p>
-              <div className="button-group">
-                <Link
-                  to="/ParticularLanguage"
-                  className={
-                    language_name === "JavaScript"
-                      ? "btn bg-button my-2 text-white disabled"
-                      : "btn bg-button my-2 text-white"
-                  }
-                >
-                  Single-player
-                </Link>
-                <button
-                  disabled={language_name === "JavaScript"}
-                  onClick={() => {
-                    return isAuthenticated()
-                      ? handleOn()
-                      : toast.error("Please login to battle a friend", {
-                          position: "top-center",
-                          autoClose: 5000,
-                          hideProgressBar: false,
-                          closeOnClick: true,
-                          pauseOnHover: true,
-                          draggable: true,
-                          progress: undefined,
-                        });
-                  }}
-                  className="btn bg-button my-2 text-white"
-                >
-                  Friendly Battle
-                </button>
-                <button
-                  type="button"
-                  disabled={language_name === "JavaScript"}
-                  className="btn bg-button my-2 text-white"
-                  onClick={() => {
-                    return isAuthenticated()
-                      ? getMultiplayerBattle()
-                      : toast.error("Please login to play multiplayer battle", {
-                          position: "top-center",
-                          autoClose: 5000,
-                          hideProgressBar: false,
-                          closeOnClick: true,
-                          pauseOnHover: true,
-                          draggable: true,
-                          progress: undefined,
-                        });
-                  }}
-                >
-                  Multiplayer
-                </button>
-              </div>
+      <div className="col-sm-5 landing-card mx-3">
+        <div className="card landing-page-card bg-light">
+          <img src={language_logo} className="card-img-top mt-2 landing-card-image" alt="..." />
+          <div className="card-body mt-2">
+            <h5 className="card-title">{language_name} {language_name === "JavaScript" && <small>(Coming Soon)</small>}</h5>
+            <p className="card-text">{language_description}</p>
+            <div className="button-group">
+              <Link
+                to="/ParticularLanguage"
+                className={
+                  language_name === "JavaScript"
+                    ? "btn card-bg-button my-2 text-white disabled"
+                    : "btn card-bg-button my-2 text-white"
+                }
+              >
+                Single-Player
+              </Link>
+              <button
+                disabled={language_name === "JavaScript"}
+                onClick={() => {
+                  return isAuthenticated()
+                    ? handleOn()
+                    : toast.error("Please login to battle a friend", {
+                      position: "top-center",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                    });
+                }}
+                className="btn card-bg-button my-2 text-white"
+              >
+                Friendly Battle
+              </button>
+              <button
+                type="button"
+                disabled={language_name === "JavaScript"}
+                className="btn card-bg-button my-2 text-white"
+                onClick={() => {
+                  return isAuthenticated()
+                    ? getMultiplayerBattle()
+                    : toast.error("Please login to play multiplayer battle", {
+                      position: "top-center",
+                      autoClose: 5000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                    });
+                }}
+              >
+                Multiplayer
+              </button>
             </div>
           </div>
         </div>
@@ -315,7 +304,7 @@ const Card = (props) => {
               <Spinner />{" "}
               <div className="_modal">
                 <button
-                  className="btn bg-button text-white"
+                  className="btn card-bg-button text-white"
                   onClick={() => deleteMultiplayerConnection()}
                 >
                   CANCEL
@@ -373,13 +362,13 @@ const Card = (props) => {
           {inviteCode === "" && flag === false ? (
             <div className="friendly_modal">
               <button
-                className="btn bg-button text-white"
+                className="btn card-bg-button text-white"
                 onClick={getMeInviteBattle}
               >
                 INVITE A FRIEND
               </button>
               <button
-                className="btn bg-button text-white"
+                className="btn card-bg-button text-white"
                 onClick={() => setFlag(true)}
               >
                 JOIN BATTLE
@@ -398,7 +387,7 @@ const Card = (props) => {
                 <div className="_modal">
                   <button
                     disabled={joinCode === ""}
-                    className="btn bg-button text-white my-2 _modal"
+                    className="btn card-bg-button text-white my-2 _modal"
                     onClick={() => startFriendlyBattle()}
                   >
                     START BATTLE
@@ -440,11 +429,12 @@ const Card = (props) => {
                   Note : Share above invite code with your friend and ask
                   him/her to start the battle
                 </p>
+                <p>Waiting for your friend to start the battle...</p>
               </div>
               <Spinner />
               <div className="_modal">
                 <button
-                  className="btn bg-button text-white"
+                  className="btn card-bg-button text-white"
                   onClick={() => deletFriendlyConnection()}
                 >
                   CANCEL
@@ -466,7 +456,7 @@ const Card = (props) => {
         pauseOnHover
       />
     </>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

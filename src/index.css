@@ -88,13 +88,16 @@ code {
   bottom: 0;
   width: 100%;
   height: auto;
+  background-color: #000000;
 }
 
 .email {
   font-family: cursive;
   color: white;
 }
-
+.email:hover{
+  color: #00e5b1;
+}
 .my-content {
   height: 80vh;
   overflow: auto;
@@ -127,7 +130,7 @@ code {
   color: white;
 }
 
-.text-auth{
+.text-auth {
   color: #3b6974;
 }
 
@@ -169,15 +172,17 @@ code {
 
 /*Editor */
 .editor {
-  height: 80vh;
+  height: 85vh;
   overflow: auto;
   background-color: hsl(225, 6%, 25%);
+  border-radius: 5px;
 }
 
 .output {
-  height: 80vh;
+  height: 85vh;
   overflow: auto;
   border: 1px solid black;
+  border-radius: 5px;
 }
 .output-window {
   display: flex;
@@ -229,7 +234,7 @@ code {
   width: 90%;
 }
 
-.preview-area img{
+.preview-area img {
   height: 100%;
   width: 90%;
 }
@@ -288,11 +293,18 @@ code {
 /* Authentication css */
 .myContainer {
   max-width: 1100px;
+  position: relative;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
+  width: 100%;
+  margin-top: 7rem;
   margin-bottom: 3rem;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
 }
 
 .myLarge {
@@ -316,10 +328,10 @@ code {
   color: #888;
 }
 
-.myForm input[type='text'],
-.myForm input[type='email'],
-.myForm input[type='password'],
-.myForm input[type='date'],
+.myForm input[type="text"],
+.myForm input[type="email"],
+.myForm input[type="password"],
+.myForm input[type="date"],
 .myForm select,
 .myForm textarea {
   display: block;
@@ -329,28 +341,28 @@ code {
   border: 1px solid #ccc;
 }
 
-.myForm input[type='submit'],
+.myForm input[type="submit"],
 button {
   font: inherit;
 }
 
-.btn-user{
+.btn-user {
   background-color: #50a18d;
   color: white;
 }
 
-.user-menu{
+.user-menu {
   /* display: flex; */
   justify-content: center;
   width: 100%;
 }
 
-.target-main{
+.target-main {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-.toggle-div{
+.toggle-div {
   display: flex;
 }
 
@@ -365,6 +377,9 @@ button {
   .hide-sm {
     display: none;
   }
+  .output{
+    margin-top: 5px;
+  }
 }
 
 @media (max-width: 850px) {
@@ -372,16 +387,25 @@ button {
     font-size: 18px;
   }
 
-  h4{
+  h4 {
     font-size: medium;
   }
 
-  .toggle-div{
+  .toggle-div {
     flex-direction: column;
   }
-  .toggle-button{
+  .toggle-button {
     border-radius: 0%;
   }
+  .landing-middle{
+    flex-direction: column;
+  }
+
+  .landing-card{
+    width: 90%;
+    margin-top: 5px;
+  }
+  
 }
 @media (max-width: 700px) {
   .myContainer {
@@ -390,10 +414,10 @@ button {
 }
 
 @media (max-width: 550px) {
-  .display-none-for-mobile{
+  .display-none-for-mobile {
     display: none;
   }
-  
+
   .myContainer {
     padding: 0 0.5rem;
   }
@@ -407,8 +431,6 @@ button {
 
 /* MyProfile */
 
-
-
 .text-name {
   margin-top: 20px;
   margin-bottom: 2rem;
@@ -419,11 +441,7 @@ button {
   margin-bottom: 2rem;
 }
 
-
-
-
-
-.setlength{
+.setlength {
   height: 60%;
   width: 60%;
   margin-left: 10%;
@@ -431,80 +449,307 @@ button {
   background-color: #f2f2f2;
 }
 
-.round-card{
+.round-card {
   margin-left: 2px;
   margin-right: 5px;
   padding: 6px 20px;
 }
 
-.setmargin{
+.setmargin {
   padding: 15px;
   border: 1px solid;
 }
 
-.imgheight{
+.imgheight {
   height: 100%;
 }
 
-.outsideborder{
+.outsideborder {
   border: 1px solid;
 }
 
-.innercard{
+.innercard1 {
   width: 80%;
   margin-top: 15%;
   margin-left: 5%;
 }
 
-.font_size{
+.font_size {
   font-size: xx-large;
 }
 
-.targetmargin{
+.targetmargin {
   margin-left: 30px;
   font-size: large;
 }
 
-.outputmargin{
+.outputmargin {
   padding-left: 60px;
 }
 
-.formmargin{
+.formmargin {
   margin: 10%;
 }
 
 /* MY Battles */
 
-.battle_card{
+.battle_card {
   height: 60%;
   width: 30%;
   margin: 5% 30%;
   padding: 30px;
-  background-color: #f2f2f2
+  background-color: #f2f2f2;
 }
 
-.performance_card{
+.performance_card {
   margin-bottom: 20px;
 }
 
-.target_card{
+.target_card {
   height: 20%;
 }
 
-.card_logo{
- height: 100%;
- width: 30%;
+.card_logo {
+  height: 100%;
+  width: 30%;
 }
 
-.category_card{
+.category_card {
   height: 15%;
   width: 72%;
 }
 
-.margin_down{
+.margin_down {
   margin-bottom: 10%;
 }
 
-.padding_card{
+.padding_card {
   padding-left: 10px;
+}
+
+/* slider */
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 400px;
+  height: 300px;
+  /* border-radius: 10px;  */
+}
+
+.right-arrow {
+  position: absolute;
+  /* top: 50%; */
+  right: 1em;
+  font-size: 5rem;
+  color: #00695c;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  /* top: 50%; */
+  left: 1em;
+  font-size: 5rem;
+  color: #00695c;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.battle {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.battle.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.landing-top {
+  color: #fff;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #0b132b, #00e5b1);
+  /* background-image: radial-gradient(circle, #0b132b, #00e5b1); */
+  height: 50vh;
+}
+
+h1.name{
+  font-size: 2.4rem;
+}
+
+h1.x-large {
+  font-size: 2.7rem;
+  font-family: serif;
+  color: transparent;
+  text-align: center;
+  word-spacing: 3px;
+  animation: effect 2s linear infinite;
+}
+
+@keyframes effect {
+  0% {
+    background: linear-gradient(#fff, #00ff00);
+    -webkit-background-clip: text;
+  }
+
+  100% {
+    background: linear-gradient(#fff, rgb(255, 238, 0));
+    -webkit-background-clip: text;
+  }
+}
+.lead {
+  font-size: 1.5rem;
+}
+.landing-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.card-bg-button {
+  background-color: #00695c;
+}
+
+.black {
+  background-color: #000;
+  font-size: 20px;
+}
+
+.landing-card-image {
+  display: flex;
+  /* background-color: #3b6974; */
+  height: 150px;
+}
+
+.btn-logout {
+  color: white;
+  background: transparent;
+  font-size: 1.35rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+li.list-item{
+  padding: 0 0 0 -50;
+}
+
+.logout{
+  background-color: rgba(48,48, 48, 0.85);
+  border: none;
+  color: #00e5b1;
+}
+
+.btn-logout:hover {
+  color: #00e5b1;
+}
+.about-parent {
+  max-width: 1100px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  width: 100%;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.large {
+  font-size: 2rem;
+}
+
+.leaderboard-table {
+  max-width: 1100px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  width: 100%;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.btn-outline-custom {
+  color: #00695c;
+  background-color: transparent;
+  background-image: none;
+  border-color: #00695c;
+}
+
+.btn-outline-custom:hover {
+  color: #fff;
+  background-color: #00695c;
+  border-color: #00695c;
+}
+
+.btn-outline-custom:focus,
+.btn-outline-custom.focus {
+  box-shadow: 0 0 0 0.2rem #00695c;
+}
+
+.btn-outline-custom.disabled,
+.btn-outline-custom:disabled {
+  color: #00695c;
+  background-color: transparent;
+}
+
+.btn-outline-custom:not(:disabled):not(.disabled):active,
+.btn-outline-custom:not(:disabled):not(.disabled).active,
+.show > .btn-outline-custom.dropdown-toggle {
+  color: #fff;
+  background-color: #00695c;
+  border-color: #00695c;
+}
+
+.btn-outline-custom:not(:disabled):not(.disabled):active:focus,
+.btn-outline-custom:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-custom.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem #00695c;
+}
+
+.table-spinner {
+  display: flex;
+  width: 100%;
+  background-color: #00695c;
+}
+
+.hide-scroll {
+  overflow: scroll;
+}
+
+.hide-scroll::-webkit-scrollbar {
+  background: transparent; /* make scrollbar transparent */
+  width: 0px;
+}
+.margin-top {
+  margin-top: 3.5rem;
+}
+.text-auth {
+  color: #00695c;
 }

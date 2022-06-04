@@ -11,7 +11,7 @@ const Login = () => {
     password: "",
   });
 
-  const { email, password} = formData;
+  const { email, password } = formData;
   const { user } = isAuthenticated();
 
   const onChange = (e) =>
@@ -32,7 +32,7 @@ const Login = () => {
           });
         });
       }
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const onSubmit = async (e) => {
@@ -55,7 +55,7 @@ const Login = () => {
           draggable: true,
           progress: undefined,
         });
-      } 
+      }
     } catch (error) {
       console.log(error);
     }
@@ -66,7 +66,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <div className="auth-container">
       <section className="myContainer">
         <h1 className="myLarge text-auth">Sign In</h1>
         <p className="myLead">
@@ -96,7 +96,7 @@ const Login = () => {
           </div>
           <input
             type="submit"
-            className="btn bg-button text-white"
+            className="btn card-bg-button text-white"
             value="Sign In"
           />
         </form>
@@ -115,7 +115,7 @@ const Login = () => {
         draggable
         pauseOnHover
       />
-    </>
+    </div>
   );
 };
 

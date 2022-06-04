@@ -47,11 +47,10 @@ const Leaderboard = () => {
   };
 
   return (
-    <div className="leaderboard">
-      <div className="leaderboard_header">
-        <h3>Leaderboard</h3>
+    <div className="container">
+      <div className="leaderboard-table">
         <div
-          className="btn-group px-2 mb-2 toggle-div"
+          className="btn-group px-2 my-3 toggle-div"
           role="group"
           aria-label="Basic radio toggle button group"
         >
@@ -65,7 +64,7 @@ const Leaderboard = () => {
             onChange={() => handleChange("singlePlayer")}
           />
           <label
-            className="btn btn-outline-success toggle-button "
+            className={document.getElementById("btnradio1") && document.getElementById("btnradio1").checked ? "btn btn-outline-custom btn-lg active toggle-button" : "btn btn-outline-custom btn-lg toggle-button"}
             htmlFor="btnradio1"
           >
             Single-player
@@ -80,42 +79,46 @@ const Leaderboard = () => {
             onChange={() => handleChange("multiplayer")}
           />
           <label
-            className="btn btn-outline-success toggle-button"
+            className={document.getElementById("btnradio2") && document.getElementById("btnradio2").checked ? "btn btn-outline-custom btn-lg active toggle-button" : "btn btn-outline-custom btn-lg toggle-button"}
             htmlFor="btnradio2"
           >
             Multiplayer
           </label>
         </div>
+        <table className="table my-5 bg-light">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Avatar</th>
+              <th scope="col">Username</th>
+              <th scope="col">Trophies</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.length === 0 ? (
+              <><td colSpan="4"><Spinner /></td></>
+            ) : (
+              data.map((user, index) => {
+                return (
+                  <tr key={index}>
+                    <th scope="row">{index + 1}</th>
+                    <td><img
+                      src="https://i.pinimg.com/originals/c4/43/46/c44346b273fc3bbaed46809a3f728302.jpg"
+                      className="img-fluid rounded-circle"
+                      style={{ width: "50px" }}
+                      alt="Avatar"
+                    /></td>
+                    <td>{user.userName}</td>
+                    <td>{user.score}</td>
+                  </tr>
+                );
+              })
+            )}
+          </tbody>
+        </table>
       </div>
-      {data.length === 0 ? (
-        <Spinner />
-      ) : (
-        data.map((user, index) => {
-          return (
-            <div className="card leaderboard_card p-1" key={index}>
-              <div className="row leaderboard_avatar">
-                <div className="col-md-3">
-                  <img
-                    src="https://i.pinimg.com/originals/c4/43/46/c44346b273fc3bbaed46809a3f728302.jpg"
-                    className="img-fluid rounded"
-                    alt="..."
-                  />
-                </div>
-                <div className="col-md-8 ">
-                  <div className="card-body">
-                    <h5 className="card-title ">
-                      {user.userName} :{" "}
-                      <span className="card-title ">{user.score}</span>
-                    </h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })
-      )}
     </div>
-  );
-};
+  )
+}
 
-export default Leaderboard;
+export default Leaderboard

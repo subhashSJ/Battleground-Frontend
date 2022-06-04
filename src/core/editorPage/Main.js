@@ -96,11 +96,11 @@ const Main = () => {
   };
 
   return (
-    <>
-      <div className="container-fluid ">
+    <div className="d-flex">
+      <div className="container-fluid margin-top ">
         {errorMessage()}
-        <div className="row p-4">
-          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 editor">
+        <div className="row p-4 ">
+          <div className="col-lg-4 col-md-12 col-sm-12 col-xs-4 editor hide-scroll">
             <Editor
               target={battle.link}
               setAccuracyPercentage={setAccuracyPercentage}
@@ -119,14 +119,14 @@ const Main = () => {
               userName={userName}
             />
           </div>
-          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 output preview-area">
+          <div className="col-lg-4 col-md-12 col-sm-12 col-xs-4 output preview-area hide-scroll">
             <Output
               accuracyPercentage={accuracyPercentage}
               score={score}
               charactersUsed={charactersUsed}
             />
           </div>
-          <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 output preview-area">
+          <div className="col-lg-4 col-md-12 col-sm-12 col-xs-4 output preview-area">
             <Target target={battle.link} colors={battle.colors} />
           </div>
         </div>
@@ -151,18 +151,18 @@ const Main = () => {
               {accuracyPercentage == 100 && battleType === "singlePlayer" ? (
                 <p className="lead fw-bold">
                   {(isScoreCreated &&
-                    "CONGRATULATIONS! You completed this battle successfully") ||
+                    "Congratulations! You completed this battle successfully") ||
                     (isScoreUpdated &&
-                      "CONGRATULATIONS! You completed this battle successfully and did better than your previous best") ||
+                      "Congratulations! You completed this battle successfully and did better than your previous best") ||
                     (isCodeNotSaved &&
-                      "CONGRATULATIONS! You completed this battle successfully but you have a better score with us") ||
+                      "Congratulations! You completed this battle successfully but you have a better score with us") ||
                     "Loading..."}
                 </p>
               ) : accuracyPercentage == 100 &&
                 (battleType === "multiPlayer" || battleType === "twoPlayer") ? (
                 winner !== "" && winner === userName ? (
                   <p className="lead fw-bold">
-                    CONGRATULATIONS, You won the battle
+                    Congratulations, You won the battle
                   </p>
                 ) : (
                   <p className="lead fw-bold">
@@ -187,7 +187,7 @@ const Main = () => {
 
               <div className="_modal">
                 <button
-                  className="btn bg-button text-white"
+                  className="btn card-bg-button text-white"
                   onClick={handleCancel}
                 >
                   OKAY
@@ -197,7 +197,7 @@ const Main = () => {
           )}
         </Modal.Body>
       </Modal>
-    </>
+    </div>
   );
 };
 

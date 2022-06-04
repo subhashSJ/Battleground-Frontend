@@ -204,6 +204,7 @@ const Editor = (props) => {
       <div className="code-area">
         <textarea
           id="htmlCode"
+          className="hide-scroll"
           placeholder="Type your HTML code here..."
           onChange={(e) => {
             setHtml(e.target.value);
@@ -211,12 +212,12 @@ const Editor = (props) => {
           value={html}
         />
       </div>
-      <div className="editor-footer mt-1 mb-1">
-        <button className="btn bg-button text-white" onClick={onSubmit}>
+      <div className="editor-footer mt-2 mb-1">
+        <button className="btn card-bg-button text-white" onClick={onSubmit}>
           Submit
         </button>
         <button
-          className="btn bg-button text-white mx-1"
+          className="btn card-bg-button text-white mx-2"
           onClick={() => handleReset()}
         >
           Reset

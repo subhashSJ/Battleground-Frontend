@@ -17,9 +17,9 @@ const Output = (props) => {
         <h4 className=" mb-0 text-black">YOUR SCORE</h4>
       </div>
       <div className="score-window">
-       <div> <h3>Accuracy : {accuracyPercentage} %</h3></div>
-       <div><h3>Number of characters : {charactersUsed}</h3></div>
-       <div><h3>Score : {score}</h3></div>
+       <div> <h3>Accuracy: {accuracyPercentage} %</h3></div>
+       <div><h3>Number of characters: {charactersUsed}</h3></div>
+       <div><h3>Score: {score}</h3></div>
       </div>
       </div>
     </>

@@ -12,6 +12,9 @@ import MyBattles from "./user/MyBattles";
 import setAuthToken from "./utils/setAuthToken";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
+import About from "./core/About";
+import NotFound from "./core/NotFound";
+import Leaderboard from "./core/Leaderboard";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -25,14 +28,17 @@ const AllRoutes = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/:languageName/:battleType" element={<MainEditor />} />
             <Route path="/:languageName/:battleType/:gameID" element={<MainEditor />} />
-            <Route path="/ParticularLanguage" element={< ParticularLanguage/>} />
+            <Route path="/ParticularLanguage" element={< ParticularLanguage />} />
             <Route path="/MyProfile" element={<MyProfile />} />
             <Route path="/EditForm" element={<EditForm />} />
             <Route path="/MyBattles" element={<MyBattles />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />

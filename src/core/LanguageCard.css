@@ -5,8 +5,7 @@
 
 .card_home{
    height: 60vh;
-   border-radius: 35px;
-   margin-bottom: 25px;
+   border-radius: 5px;
    background-color: #f2f2f2;
 }
 
@@ -23,22 +22,21 @@
 .card-header{
     display: flex; 
     justify-content: center; 
-    align-items: center;  
-    height: 60px;     
-    background-color: #3b6974;
+    align-items: center;      
+    background-color: #00695c;
     box-sizing: border-box;
     font-family: "Arial", sans-serif;
     font-size: 30px;
     color: white;
-    margin: 28px 10px 0px 22px;
+    border-radius: 5px;
 }
 
 .battle_title_content{
     display: flex;
-    overflow-x: auto;
+    /* overflow: auto; */
     flex-direction: row;
     margin: 28px 12px 0px 22px;
-    /* position: sticky; */
+    position: sticky;
 }
 
 .battle_title_info{
@@ -53,9 +51,7 @@
     border-radius: 10px;
 }
 
-.battle_title_targets{
-    white-space: nowrap;   
-}
+
 
 .battle_title_target{
     position: relative;
@@ -100,4 +96,13 @@ image1{
 }
  */
 
-
+.language-container{
+        max-width: 1200px;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 2rem;
+        width: 100%;
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+}
